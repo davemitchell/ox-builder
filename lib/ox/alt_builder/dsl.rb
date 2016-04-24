@@ -1,5 +1,5 @@
 module Ox
-  module Builder
+  module AltBuilder
     module DSL
       def instruct!(*args)
         attributes = args.last.is_a?(Hash) ? args.pop : { version: '1.0', encoding: 'UTF-8' }
@@ -24,7 +24,7 @@ module Ox
       end
 
       def tag!(name, *args, &block)
-        builder = Builder.build(Ox::Element.new(name), &block).tap do |tag|
+        builder = AltBuilder.build(Ox::Element.new(name), &block).tap do |tag|
           attributes = args.last.is_a?(Hash) ? args.pop : {}
 
           tag.add_attributes(attributes)

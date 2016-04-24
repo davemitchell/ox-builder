@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Ox::Builder::DSL do
+describe Ox::AltBuilder::DSL do
   it 'should return \n when no block is given' do
     expect(generate).to eq("\n")
   end

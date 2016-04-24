@@ -1,5 +1,5 @@
 module Ox
-  module Builder
+  module AltBuilder
     class Factory
       include DSL
 

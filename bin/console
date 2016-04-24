@@ -5,7 +5,7 @@ require 'active_support'
 require 'active_support/hash_with_indifferent_access'
 require 'action_view'
 require 'tilt'
-require "ox/builder"
+require "ox/alt_builder"
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.

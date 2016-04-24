@@ -2,7 +2,7 @@ require 'active_support/core_ext/class/attribute'
 require 'action_dispatch/http/mime_type'
 
 module Ox
-  module Builder
+  module AltBuilder
     module ActionView
       class TemplateHandler
         class_attribute :default_format
@@ -10,7 +10,7 @@ module Ox
 
         def call(template)
           <<-RUBY
-            xml = ::Ox::Builder.build {
+            xml = ::Ox::AltBuilder.build {
               #{template.source}
             };xml.to_xml
           RUBY

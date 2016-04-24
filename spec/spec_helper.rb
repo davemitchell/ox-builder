@@ -6,12 +6,12 @@ require 'active_support/hash_with_indifferent_access'
 require 'action_view'
 require 'tilt'
 
-require 'ox/builder'
+require 'ox/alt_builder'
 
 def load_xml(filename)
   File.read("spec/support/#{filename}.out.xml")
 end
 
 def generate(options = {}, &block)
-  Ox::Builder.build(&block).to_s(options)
+  Ox::AltBuilder.build(&block).to_s(options)
 end

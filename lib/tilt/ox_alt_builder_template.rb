@@ -1,21 +1,21 @@
 require 'tilt/template'
-require 'ox/builder'
+require 'ox/alt_builder'
 
 module Tilt
-  class OxBuilderTemplate < Template
+  class OxAltBuilderTemplate < Template
     self.default_mime_type = 'text/xml'
 
     def self.engine_initialized?
-      defined? ::Ox::Builder
+      defined? ::Ox::AltBuilder
     end
 
     def initialize_engine
-      require_template_library 'ox-builder'
+      require_template_library 'ox-alt-builder'
     end
 
     def prepare
       @code =<<-RUBY
-        Ox::Builder.build do
+        Ox::AltBuilder.build do
           #{data}
         end.to_xml
       RUBY

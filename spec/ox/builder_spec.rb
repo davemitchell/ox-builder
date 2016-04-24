@@ -3,7 +3,7 @@ require 'spec_helper'
 
 Shape = Struct.new(:type, :width, :height, :color)
 
-describe Ox::Builder do
+describe Ox::AltBuilder do
   it 'should build a simple document' do
     doc = generate do
       instruct!

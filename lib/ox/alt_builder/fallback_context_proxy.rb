@@ -1,5 +1,5 @@
 module Ox
-  module Builder
+  module AltBuilder
     class FallbackContextProxy < Docile::FallbackContextProxy
       DSL_METHODS = DSL.instance_methods(false)
 

@@ -1,12 +1,12 @@
 require 'ox'
 require 'docile'
-require 'ox/builder/version'
-require 'ox/builder/dsl'
-require 'ox/builder/factory'
-require 'ox/builder/fallback_context_proxy'
+require 'ox/alt_builder/version'
+require 'ox/alt_builder/dsl'
+require 'ox/alt_builder/factory'
+require 'ox/alt_builder/fallback_context_proxy'
 
 module Ox
-  module Builder
+  module AltBuilder
     class << self
       def build(node = Ox::Document.new, &block)
         Factory.new(node).tap do |builder|
@@ -24,11 +24,11 @@ module Ox
 end
 
 if defined?(Tilt)
-  require 'tilt/ox_builder_template'
-  Tilt.register Tilt::OxBuilderTemplate, 'ox'
+  require 'tilt/ox_alt_builder_template'
+  Tilt.register Tilt::OxAltBuilderTemplate, 'ox'
 end
 
 if defined?(ActionView)
-  require 'ox/builder/action_view/template_handler'
-  ActionView::Template.register_template_handler :ox, Ox::Builder::ActionView::TemplateHandler.new
+  require 'ox/alt_builder/action_view/template_handler'
+  ActionView::Template.register_template_handler :ox, Ox::AltBuilder::ActionView::TemplateHandler.new
 end

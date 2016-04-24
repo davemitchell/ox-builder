@@ -5,7 +5,7 @@ Country = Struct.new(:code, :name, :population, :north, :south, :east, :west, :c
 data = YAML.load_file('benchmarks/data/countries.yml')['countries']['country']
 @countries = data.map{ |c| Country.new(*c.values) }
 
-doc = Ox::Builder.build do
+doc = Ox::AltBuilder.build do
   instruct!
 
   countries do

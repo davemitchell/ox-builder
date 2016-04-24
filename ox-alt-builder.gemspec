@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ox/builder/version'
+require 'ox/alt_builder/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "ox-builder"
-  gem.version       = Ox::Builder::VERSION
+  gem.name          = "ox-alt-builder"
+  gem.version       = Ox::AltBuilder::VERSION
   gem.authors       = ["Daniel Vandersluis"]
   gem.email         = ["dvandersluis@selfmgmt.com"]
 
@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = "https://www.github.com/dvandersluis/ox-builder"
   gem.license       = "MIT"
 
-  gem.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  gem.files         = Dir['{benchmark,lib}/**/*', 'Rakefile', 'README.md']
   gem.bindir        = "exe"
   gem.executables   = gem.files.grep(%r{^exe/}) { |f| File.basename(f) }
   gem.require_paths = ["lib"]
